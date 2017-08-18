@@ -14,5 +14,5 @@ import com.edu.sms.model.Student;
 
 @Component
 public interface StudentLogic {
-	public void save(Student student);
+	public Long save(Student student);
 }

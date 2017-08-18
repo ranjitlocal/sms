@@ -9,6 +9,7 @@
 	
 <!-- 	<import resource="classpath*:application-logic.xml"/> -->
 	<import resource="classpath*:application-logic.xml"/>
+	<import resource="classpath*:application-dao.xml"/>
 		
 	<mvc:annotation-driven />
 	<context:component-scan base-package="com.edu.sms.controller" />

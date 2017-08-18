@@ -9,6 +9,6 @@
     <module>sms-web</module>
     <module>sms-logic</module>
     <module>sms-dao</module>
-    <module>sms-entity</module>
+    <module>sms-common</module>
   </modules>
 </project>

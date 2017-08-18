@@ -14,8 +14,8 @@ public class Student {
 	private String studentName;
 	private Date dob;
 	private Long mobile;
-	private Address address;
-
+	private String address;
+	
 	public String getStudentName() {
 		return studentName;
 	}
@@ -34,13 +34,12 @@ public class Student {
 	public void setMobile(Long mobile) {
 		this.mobile = mobile;
 	}
-	public Address getAddress() {
+	public String getAddress() {
 		return address;
 	}
-	public void setAddress(Address address) {
+	public void setAddress(String address) {
 		this.address = address;
-	}
-	
+	}	
 	public String toString()
 	{
 		return String.format("%s", studentName);

@@ -5,6 +5,7 @@ package com.edu.sms.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,14 +32,22 @@ public class StudentController {
 	}
 
 	@RequestMapping(value="submitAdmissionForm", method = RequestMethod.POST)
-	public ModelAndView submitAdmissionForm(@ModelAttribute("student") Student student)
+	public ModelAndView submitAdmissionForm(@ModelAttribute("student") Student student, BindingResult result)
 	{
-		ModelAndView modelAndView = new ModelAndView("output");
-		modelAndView.addObject("student", student);
-		
+		ModelAndView modelAndView = null;
+		if(result.hasErrors())
+		{
+			modelAndView = new ModelAndView("admissionForm");
+			return modelAndView;
+		}		
+
 		StudentLogic studentLogic = new StudentLogicImpl();
-		studentLogic.save(student);
-		
+		Long studentId = studentLogic.save(student);
+
+		modelAndView = new ModelAndView("output");
+		modelAndView.addObject("student", student);
+		modelAndView.addObject("studentId", studentId);
+
 		return modelAndView;
 	}
 	

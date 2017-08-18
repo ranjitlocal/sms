@@ -1,12 +1,14 @@
 <%@ include file="parent.jsp" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title></title>
 </head>
 <body>
 	<center>
+	<form:errors path="student.*" ><hr></form:errors>
 	<form action="submitAdmissionForm" method="post">
 			<table>
 				<caption><b>Application Form</b></caption>
@@ -23,9 +25,10 @@
 					<td><input type="text" name="mobile" /></td>
 				</tr>
 				<tr>
-					<td>Address<hr/></td>
+					<td>Address</td>
+					<td><input type="text" name="address" /></td>
 				</tr>
-				<tr>
+				<!-- <tr>
 					<td>House No.</td>
 					<td><input type="text" name="address.houseNo" /></td>
 				</tr>
@@ -57,7 +60,7 @@
 							<option value="USA">USA</option>
 						</select>
 					</td>
-				</tr>
+				</tr> -->
 				<tr>
 					<td colspan="2"><input type="submit" value="Submit" /></td>
 				</tr>

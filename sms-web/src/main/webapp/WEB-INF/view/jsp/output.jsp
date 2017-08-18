@@ -11,6 +11,10 @@
 		<table>
 			<caption><b>Student Details</b></caption>
 			<tr>
+				<td><b>Congratulation, Student has been enrolled with Student id</b></td>
+				<td>${studentId}</td>
+			</tr>
+			<tr>
 				<td><b>Student Name</b></td>
 				<td>${student.studentName}</td>
 			</tr>
@@ -23,6 +27,10 @@
 				<td>${student.mobile}</td>
 			</tr>
 			<tr>
+				<td><b>Address</b></td>
+				<td><b>${student.address}</b></td>
+			</tr>
+			<%-- <tr>
 				<td><b>House No.</b></td>
 				<td><b>${student.address.houseNo}</b></td>
 			</tr>
@@ -45,7 +53,7 @@
 			<tr>
 				<td><b>Country</b></td>
 				<td>${student.address.country}</td>
-			</tr>
+			</tr> --%>
 		</table>
 	</form>
 	</center>

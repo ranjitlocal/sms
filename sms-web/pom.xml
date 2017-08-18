@@ -14,13 +14,16 @@
   
   <properties>
 	<java-version>1.8</java-version>
-	<org.springframework-version>4.3.9.RELEASE</org.springframework-version>
+	<org.springframework.version>4.3.9.RELEASE</org.springframework.version>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
   <dependencies>
+  
+  	<!-- Start Dependency of SUb-Module -->
   	<dependency>
 	  	<groupId>com.edu.sms</groupId>
-	    <artifactId>sms-entity</artifactId>
+	    <artifactId>sms-common</artifactId>
 	    <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
@@ -28,17 +31,40 @@
 	    <artifactId>sms-logic</artifactId>
 	    <version>0.0.1-SNAPSHOT</version>
     </dependency>
+    <!-- End Dependency of SUb-Module -->
+    
+    <!-- Start of Junit -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <!-- End of Junit -->
+    
+    <!-- Start of SpringFramework -->
     <dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-webmvc</artifactId>
-		<version>${org.springframework-version}</version>
+		<version>${org.springframework.version}</version>
 	</dependency>
+	<dependency> 
+	     <groupId>org.springframework</groupId> 
+	     <artifactId>spring-aspects</artifactId> 
+	     <version>${org.springframework.version}</version> 
+	</dependency>
+	<!-- <dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-taglibs</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency> -->
+	<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-taglibs</artifactId>
+	    <version>4.2.1.RELEASE</version>
+	</dependency>
+	
 	<!-- Below declared dependencies are included for the servers who may complain about servlet/jstl missing dependency -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -55,11 +81,6 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-        <dependency> 
-		     <groupId>org.springframework</groupId> 
-		     <artifactId>spring-aspects</artifactId> 
-		     <version>3.1.2.RELEASE</version> 
-		</dependency>
   </dependencies>
   <build>
     <finalName>sms</finalName>

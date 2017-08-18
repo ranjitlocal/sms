@@ -3,12 +3,21 @@
  */
 package com.edu.sms.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * @author ranjit.soni
  *
  */
+@Entity
+@Table(name="address")
 public class AddressBean {
-
+	
+	private Long addressId;
 	private String houseNo;
 	private String street;
 	private String locality;
@@ -16,6 +25,14 @@ public class AddressBean {
 	private String state;
 	private String country;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Long getAddressId() {
+		return addressId;
+	}
+	public void setAddressId(Long addressId) {
+		this.addressId = addressId;
+	}
 	public String getHouseNo() {
 		return houseNo;
 	}
@@ -51,5 +68,11 @@ public class AddressBean {
 	}
 	public void setCountry(String country) {
 		this.country = country;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return houseNo+" "+street+" "+locality+" "+city+" "+state+" "+country;
 	}
 }

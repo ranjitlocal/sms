@@ -11,7 +11,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.edu.sms</groupId>
-			<artifactId>sms-entity</artifactId>
+			<artifactId>sms-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>

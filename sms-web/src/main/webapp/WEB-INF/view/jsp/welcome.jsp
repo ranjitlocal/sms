@@ -7,6 +7,6 @@
 </head>
 <body>
     Greeting : ${greeting}
-    Click on Link for <a href="admission">Application Form</a>
+    Click on Link for <a href="student/admission">Application Form</a>
 </body>
 </html>
